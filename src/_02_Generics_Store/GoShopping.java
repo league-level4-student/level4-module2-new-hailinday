@@ -11,23 +11,27 @@ public class GoShopping {
 	
 	public static void main(String[] args) {
 		// 2. Create a Cart object of type Candy
-		
-		// 3. Create another Cart object of type Cereal
-		
-		// 4. Add a few items to EACH cart
-		
-		
-		
-		
-		// 5. Call the showCart() method on EACH cart
-		
+//		Cart<Candy> candyCart = new Cart<Candy>();
+//		// 3. Create another Cart object of type Cereal
+//		Cart<Cereal> cerCart = new Cart<Cereal>();
+//		// 4. Add a few items to EACH cart
+//		Candy chocolate = new Candy();
+//		candyCart.add(chocolate);
+//		Cereal frosted = new Cereal();
+//		cerCart.add(frosted);
+//		
+//		
+//		// 5. Call the showCart() method on EACH cart
+//		candyCart.showCart();
+//		cerCart.showCart();
 		
 		// 6. Run the code
 		
 		// 7. Comment out the code you have so far
 		
 		// 8. Repeat steps 2-5 for a Clothing Cart and a Toy Cart
-		
+		Cart<Clothing> clothCart = new Cart<Clothing>();
+		Cart<Toy> toyCart = new Cart<Toy>();
 		
 		
 		

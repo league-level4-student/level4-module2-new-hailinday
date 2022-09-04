@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  */
 
 @SuppressWarnings("unchecked")
-public class Cart<T extends Food> {
+public class Cart<T extends Food, Nonfood> {
     private T[] cart;
 
     public Cart() {
