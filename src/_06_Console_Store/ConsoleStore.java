@@ -1,5 +1,7 @@
 package _06_Console_Store;
+import java.util.Scanner;
 
+import _02_Generics_Store.*;
 public class ConsoleStore {
 
     /*
@@ -37,7 +39,30 @@ public class ConsoleStore {
      */
 
     public static void main(String[] args) {
-
+    Scanner scan = new Scanner(System.in);
+    Double money = 100.00;
+    Cart<Clothing> clothes = new Cart<Clothing>();
+    Cart<Toy> toys = new Cart<Toy>();
+    Cart<Lego> legos = new Cart<Lego>();
+    Cart<Stuffed> stuffed = new Cart<Stuffed>();
+    String check;
+    int price;
+    do {
+    System.out.println("How many clothes woudld you like for $10");
+    int clothAm = scan.nextInt();
+    System.out.println("How many toys would you like for $5");
+    int toyAm = scan.nextInt();
+    System.out.println("How many legos would you like for $20");
+    int legoAm = scan.nextInt();
+    System.out.println("How many stuffed animals would you like for $15");
+    int stuffAm = scan.nextInt();
+    System.out.println("Would you like to view your items?");
+    String view = scan.next();
+    System.out.println("Are you ready to cash out?");
+    check = scan.next();
+    } while (!check.equalsIgnoreCase("Yes"));
+    
+    
     }
 
 }

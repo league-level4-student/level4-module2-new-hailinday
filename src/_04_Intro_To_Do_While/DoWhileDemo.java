@@ -43,7 +43,8 @@ public class DoWhileDemo {
 
         String again;
 
-        while (again.equals("y")) {
+        
+        do {
             int flip = rand.nextInt(2);
             String coin;
 
@@ -56,7 +57,7 @@ public class DoWhileDemo {
 
             System.out.print("Would you like to flip again (y/n)? ");
             again = scan.next();
-        }
+        } while (again.equals("Y"));
 
         scan.close();
     }

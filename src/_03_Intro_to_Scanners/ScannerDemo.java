@@ -24,8 +24,7 @@ public class ScannerDemo {
          * Eclipse's console. This may change depending on the environment where
          * are running your program or the input/output stream you are using.
          */
-
-        
+    	Scanner kb = new Scanner(System.in);        
         
         /*
          * 2. Use a syso to ask the user for their name and then use the Scanner
@@ -41,7 +40,8 @@ public class ScannerDemo {
          * Note: Don't forget to save the results of next() or nextLine() into a
          * String variable.
          */
-
+    	System.out.println("What is your name?");
+    	String name = kb.next();
         
         
         /*
@@ -51,8 +51,8 @@ public class ScannerDemo {
          * See if you can find the scanner method that does this without relying
          * on Integer.parseInt().
          */
-
-        
+    	System.out.println("What is your age?");
+    	int age = kb.nextInt();        
         
         /*
          * 4.) Try asking the user for another piece of information that's not a
@@ -61,9 +61,10 @@ public class ScannerDemo {
          * Note: There are many methods similar to the one you used for int that
          * are capable of taking in primitive data types.
          */
-
+    	System.out.println("How much money do you have?");
+    	Double money = kb.nextDouble();
         // 5.) Print the user's data to the console nicely formatted.
-
+    	System.out.println("Name: " + name + "\nAge: " + age + "\nMoney: " + money);
         
         
         /*
@@ -72,7 +73,7 @@ public class ScannerDemo {
          * Note: When using a Scanner with the System.in input stream in larger
          * programs only close the scanner when your program is completely done.
          */
-
+    	kb.close();
     }
 
 }
