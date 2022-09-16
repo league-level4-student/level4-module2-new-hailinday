@@ -40,29 +40,74 @@ public class ConsoleStore {
 
     public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
-    Double money = 100.00;
+    double money = 200.00;
     Cart<Clothing> clothes = new Cart<Clothing>();
     Cart<Toy> toys = new Cart<Toy>();
     Cart<Lego> legos = new Cart<Lego>();
     Cart<Stuffed> stuffed = new Cart<Stuffed>();
     String check;
-    int price;
+    int clothAm=0;
+    int toyAm=0;
+    int legoAm=0;
+    int stuffAm=0;
     do {
-    System.out.println("How many clothes woudld you like for $10");
-    int clothAm = scan.nextInt();
+    System.out.println("How many clothes would you like for $10");
+    clothAm += scan.nextInt();
+    money-=10 * clothAm;
     System.out.println("How many toys would you like for $5");
-    int toyAm = scan.nextInt();
+    toyAm += scan.nextInt();
+    money-=5 * toyAm;
     System.out.println("How many legos would you like for $20");
-    int legoAm = scan.nextInt();
+    legoAm += scan.nextInt();
+    money-=20 * legoAm;
     System.out.println("How many stuffed animals would you like for $15");
-    int stuffAm = scan.nextInt();
+    stuffAm += scan.nextInt();
+    money-=15 * stuffAm;
     System.out.println("Would you like to view your items?");
     String view = scan.next();
+    if (view.equalsIgnoreCase("Yes")) {
+		System.out.println("Clothes: " + clothAm);
+		System.out.println("Toys: " + toyAm);
+		System.out.println("Lego: " + legoAm);
+		System.out.println("Stuffed Animals: " + stuffAm);
+	}
+    System.out.println(money);
     System.out.println("Are you ready to cash out?");
     check = scan.next();
     } while (!check.equalsIgnoreCase("Yes"));
-    
-    
+    	if (money<0.0) {
+			System.out.println("You need to remove some items, you can't pay for all that.");
+			do {
+				System.out.println("How many clothes would you like to remove");
+			    clothAm -= scan.nextInt();
+			    money+=10 * clothAm;
+			    System.out.println("How many toys would you like to remove");
+			    toyAm -= scan.nextInt();
+			    money+=5 * clothAm;
+			    System.out.println("How many legos would you like to remove");
+			    legoAm -= scan.nextInt();
+			    money+=20 * clothAm;
+			    System.out.println("How many stuffed animals would you like to remove");
+			    stuffAm -= scan.nextInt();
+			    money+=15 * clothAm;
+			    System.out.println("Would you like to view your items?");
+			    String view = scan.next();
+			    if (view.equalsIgnoreCase("Yes")) {
+					System.out.println("Clothes: " + clothAm);
+					System.out.println("Toys: " + toyAm);
+					System.out.println("Lego: " + legoAm);
+					System.out.println("Stuffed Animals: " + stuffAm);
+				}
+			} while (money <0.0);
+				
+		}
+    	double total = clothAm * 10 + toyAm * 5 + legoAm * 20 + stuffAm * 15;
+    	System.out.println("Receipt: ");
+    	System.out.println("Clothes: $" + clothAm * 10);
+		System.out.println("Toys: $" + toyAm * 5);
+		System.out.println("Lego: $" + legoAm * 20);
+		System.out.println("Stuffed Animals: $" + stuffAm * 15);
+		System.out.println("Total: $" + (total));
     }
 
 }
